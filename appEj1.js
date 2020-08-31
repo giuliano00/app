@@ -109,8 +109,9 @@ console.log(result);
 //--------------------------------------------------------------------------------------------------------------
 
 //10- Define la función contiene que dado un elemento y una lista, nos diga si la lista contiene al elemento
-
+/*
 contiene=[7,8,9]
 
 const result= contiene.filter(contiene=>contiene==8);
 console.log(result);
+*/
