@@ -184,7 +184,7 @@ console.log(estidiante.estudiando());
 
 //13- Crea una clase Profesor (que herede de Persona) que tenga un atributo estudiantes con un array de Estudiante.
 // Además debe tener dos métodos enseñando() que imprima por consola todos sus estudiantes a los cuales les está enseñando y
-//el método addEstudiante(unEstudiante) que agregue a ese estudiante a la lista.
+//el método addEstudiante(unEstudiante) que agregue a ese estudiante a la lista..
 // Además este método es responsable de manejar de agregar al objeto profesor como profesor del estudiante (manejo de doble referencia)
 
 
@@ -242,6 +242,7 @@ class Profesor extends Perssona
     new Estudiante("federico",34),
     new Estudiante("giselle",36),
   ];
+
 
 
 
