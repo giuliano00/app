@@ -186,7 +186,7 @@ console.log(estidiante.estudiando());
 // Además debe tener dos métodos enseñando() que imprima por consola todos sus estudiantes a los cuales les está enseñando y
 //el método addEstudiante(unEstudiante) que agregue a ese estudiante a la lista..
 // Además este método es responsable de manejar de agregar al objeto profesor como profesor del estudiante (manejo de doble referencia)
-
+/*
 
 class Persona
 {
@@ -243,8 +243,5 @@ class Profesor extends Perssona
     new Estudiante("giselle",36),
   ];
 
-
-
-
-
 }
+*/
