@@ -11,9 +11,9 @@ console.log(x);
 /*
 var M =["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
 
-for(var i=0;i<M.length;i++){
-
-console.log(M[i]);
+for(var i=0;i<M.length;i++)
+{
+  console.log(M[i]);
 }
 */
 //--------------------------------------------------------------------------------------------------------------
@@ -21,11 +21,14 @@ console.log(M[i]);
 //3- Escribir el código de una función a la que se pasa como parámetro un número entero y devuelve como resultado una cadena de texto que indica si el número es par o impar.
 // Mostrar por pantalla el resultado devuelto por la función.
 /*
-function parImpar(numero) {
-  if(numero % 2 == 0) {
+function parImpar(numero) 
+{
+  if(numero % 2 == 0) 
+  {
     return "par";
   }
-  else {
+  else 
+  {
     return "impar";
   }
 }
@@ -36,10 +39,14 @@ console.log(parImpar(2));
 
 //4- Define una función que dado un array de números nos dice si alguno es par.
 /*
-function algunoEsPar (arrnum){
-if (Array.isArray(arrnum)){
+function algunoEsPar (arrnum)
+{
+if (Array.isArray(arrnum))
+{
 return arrnum.some (Element=>Element%2==0);
-}else{
+}
+else
+{
   console.log("no cuenta como arr");
 }
 }
@@ -51,7 +58,8 @@ console.log(algunoEsPar([1,2,3]));
 //5- Define la función aprobó, que dada la lista de las notas de un alumno devuelve si el alumno aprobó.
 // Un alumno aprobó si todas sus notas son mayores o iguales a 4
 /*
-function aprobo (nota){
+function aprobo (nota)
+{
   
   var notaaprobado = 4;
 
@@ -64,14 +72,16 @@ console.log(aprobo([8,6,2,4]));
 //6- Define la función quienesAprobaron, que dada la información de un curso devuelve la información de los alumnos que aprobaron.
 // Podés usar la función que hiciste en el ejercicio anterior.
 /*
-function aprobo (nota){
+function aprobo (nota)
+{
   
   var notaaprobado = 4;
 
   return nota.every(Element=>Element>=notaaprobado)
 
 }
-function quienesAprobaron (nota){
+function quienesAprobaron (nota)
+{
 
   return nota.filter(notas=>aprobo(notas))
   
@@ -85,7 +95,8 @@ function quienesAprobaron (nota){
 
 //7- Define la función hayAlgunNegativo, que dada una lista de números nos dice si hay algún negativo
 /*
-function  hayAlgunNegativo (arr){
+function  hayAlgunNegativo (arr)
+{
  return arr.some (Element=>Element<0);
 }
 console.log( hayAlgunNegativo([2,-3,9]));
@@ -94,12 +105,14 @@ console.log( hayAlgunNegativo([2,-3,9]));
 
 //8- Escribi una función cuantosCumplen que dada una condición y una lista, diga cuantos elementos la cumplen
 /*
-function even(Element){
+function even(Element)
+{
 
   return Element%2===0;
 
 }
-function cuantosCumplen(fun,array){
+function cuantosCumplen(fun,array)
+{
 
   var arr= array.filter(Element => fun(Element));
 
@@ -115,13 +128,15 @@ console.log(cuantosCumplen(even,[7,9,25,42]));
 //9- Escribí una función rechazar, que dada una condición y un array, devuelva un array con los elementos que no la cumplen
 /*
 
-function even(Element){
+function even(Element)
+{
 
   return Element%2===0;
 
 }
 
-function rechazar(fun,arr){
+function rechazar(fun,arr)
+{
 
 var arrqnocumplen = arr.filter(Element=>!fun(Element))
 
@@ -133,15 +148,16 @@ console.log(rechazar(even,[7,9,87,42]));
 //--------------------------------------------------------------------------------------------------------------
 
 //10- Define la función contiene que dado un elemento y una lista, nos diga si la lista contiene al elemento
-
-function contiene (num,arr) {
+/*
+function contiene (num,arr) 
+{
 
   return arr.some (Element=> Element ==num);
 
 }
 
 console.log(contiene(8,[7,8,9]));
-
+*/
 //--------------------------------------------------------------------------------------------------------------
 
 //11- Crea una clase Persona que tenga los atributos nombre y edad. 
@@ -213,7 +229,7 @@ console.log(estidiante.estudiando());
 // Además debe tener dos métodos enseñando() que imprima por consola todos sus estudiantes a los cuales les está enseñando y
 //el método addEstudiante(unEstudiante) que agregue a ese estudiante a la lista..
 // Además este método es responsable de manejar de agregar al objeto profesor como profesor del estudiante (manejo de doble referencia)
-/*
+
 
 class Persona
 {
@@ -231,7 +247,7 @@ constructor(nombre , edad)
 }
 
 
-
+//-----------------------------------------------------------------------------------------------
 
 class Estudiante extends Persona
 {
@@ -241,6 +257,7 @@ super(nombre,edad)
 this.profesor=profesor;
   }
 
+  
 estudiando()
   {
 return "Estudiando con"+" "+this.profesor;
@@ -254,27 +271,45 @@ return "Estudiando con"+" "+this.profesor;
 }
 
 
+//-----------------------------------------------------------------------------------------------
 
-
-class Profesor extends Perssona
+class Profesor extends Persona
 {
-  constructor(nombre ,edad,Estudiante)
-  {
+  constructor(nombre ,edad)
+  { 
     super (nombre, edad);
-
+    this.estudiantes=[];
   }
 
-  addEstudiante (estudiante)
-  {
+enseñando()
+{
+    if(this.estudiantes.length>0)
+    {
+        console.log("los alumnos de: "+p1+" son: ");
+        this.estudiantes.forEach(estudiante => console.log(estudiante.nombre));
+    }   
+}
 
-  }
-
-  var arrayAlumnos=
-  [
-    new Estudiante("giuliano",20),
-    new Estudiante("federico",34),
-    new Estudiante("giselle",36),
-  ];
+addEstudiante(estudiante)
+{
+  this.estudiantes.push(estudiante);
+  estudiante.setProfesor(this);
+}
 
 }
-*/
+
+  a1=new Estudiante("giuliano,20");
+  a2=new Estudiante("federico,30");
+  a3=new Estudiante("giselle,40");
+
+  p1=new Profesor("julio",50)
+
+  p1.addEstudiante(a1);
+  p1.addEstudiante(a2);
+  p1.addEstudiante(a3);
+
+  p1.enseñando(a1);
+
+  a1.estudiando();
+  a2.estudiando();
+  a3.estudiando();
