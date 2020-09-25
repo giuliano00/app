@@ -300,7 +300,7 @@ addEstudiante(estudiante)
 
   a1=new Estudiante("giuliano,20");
   a2=new Estudiante("federico,30");
-  a3=new Estudiante("giselle,40");
+  a3=new Estudiante("giselle,45");
 
   p1=new Profesor("julio",50)
 
